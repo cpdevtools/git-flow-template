@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+*.log
+.env
+.env.local
+.wireit/
+
+# Production lockfile dir — only the lockfile is committed
+.pnpm-prod/*
+!.pnpm-prod/pnpm-lock.yaml
