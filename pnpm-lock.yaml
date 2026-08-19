@@ -11,14 +11,14 @@ importers:
   .:
     devDependencies:
       '@cpdevtools/git-flow':
-        specifier: ^1.0.0
-        version: 1.0.0(chokidar@3.6.0)
+        specifier: ^1.0.2
+        version: 1.0.2(chokidar@3.6.0)
       '@cpdevtools/git-flow-cli':
-        specifier: ^1.0.0
-        version: 1.0.0(chokidar@3.6.0)
+        specifier: ^1.0.2
+        version: 1.0.2(chokidar@3.6.0)
       '@cpdevtools/ts-dev-utilities-cli':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
       '@types/node':
         specifier: ^20.17.11
         version: 20.19.43
@@ -72,22 +72,22 @@ packages:
     resolution: {integrity: sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg==}
     engines: {node: '>=6.9.0'}
 
-  '@cpdevtools/git-flow-cli@1.0.0':
-    resolution: {integrity: sha512-ia6Q3ElJUZD6jgAoSdmdF5HI+0bL6rinM5qgCbdLgHI+XdtcAWsA597rHRNM5mf7pKMzqyVJ6TvZHJyx7Nc61w==, tarball: https://npm.pkg.github.com/download/@cpdevtools/git-flow-cli/1.0.0/70ba9d8895cf943fbb1f4b769f27e1aff18b0139}
+  '@cpdevtools/git-flow-cli@1.0.2':
+    resolution: {integrity: sha512-MTdCNTT8TevrEVobvaY309x/0esR8NJ6dcxr3/hSophftdrQSf1TJtB82APfWxjEODFfbt8aNXuDyOAqDCDDiQ==, tarball: https://npm.pkg.github.com/download/@cpdevtools/git-flow-cli/1.0.2/b071fb1aaba1c667475a2a401187d4e7401db4c4}
     engines: {node: '>=24'}
     hasBin: true
 
-  '@cpdevtools/git-flow@1.0.0':
-    resolution: {integrity: sha512-ND+Ojj83PZzZNZmmrnlq6pjd8FbW+woc/HaDA66T130O76iqXglsi/XJLiSQ6noiL/IySTbPr4HZKGKZCp9w6A==, tarball: https://npm.pkg.github.com/download/@cpdevtools/git-flow/1.0.0/94f159b468a4edbb84de5fcfb49181fecdc8fcb4}
+  '@cpdevtools/git-flow@1.0.2':
+    resolution: {integrity: sha512-JxV8K1m0cT9VbHEaTnCk+SooQpHNXgkokcFFspidDnp/9ZqS9lv0V4ZXIsDhT+PDxvZ+Wt2UzKqy7/Z/EUuRkw==, tarball: https://npm.pkg.github.com/download/@cpdevtools/git-flow/1.0.2/af060dde680dad87d8b8bb203da6c4c3b37b40bc}
     engines: {node: '>=24'}
 
-  '@cpdevtools/ts-dev-utilities-cli@1.0.0':
-    resolution: {integrity: sha512-VsEa2ALGDhlRiMq3sz4PgjpDdvrG7OblhJ19UZKTwkfj6uQn9FBtmWkXf+chWlpggcbYsHyMgzU0BUjMA+eFIQ==, tarball: https://npm.pkg.github.com/download/@cpdevtools/ts-dev-utilities-cli/1.0.0/0f316c57f57aff93a4697d2a5fd48a8d4e548f4b}
+  '@cpdevtools/ts-dev-utilities-cli@1.0.1':
+    resolution: {integrity: sha512-TF2KeVp61AiMr3VwHyTIcRc/smHdq4D0jhgwLoQHssIbUsXZWDgBL04DFYlXCeKoJUpOn+nneAfS5uZ33RyH8A==, tarball: https://npm.pkg.github.com/download/@cpdevtools/ts-dev-utilities-cli/1.0.1/a85ac4a7ba1ed79fbecb3fafb97d42e9560263c8}
     engines: {node: '>=24'}
     hasBin: true
 
-  '@cpdevtools/ts-dev-utilities@1.0.0':
-    resolution: {integrity: sha512-KbjifRnuk6fk3Be7T/m4T++ilIc9SAzb9Tw5CHw7Ctg9FQ56KzoEc149x/76dC3IYtT/xPezZtZGFDu0QtBl+g==, tarball: https://npm.pkg.github.com/download/@cpdevtools/ts-dev-utilities/1.0.0/a34ee992edb47a18855cb965514089f1b4387d59}
+  '@cpdevtools/ts-dev-utilities@1.0.1':
+    resolution: {integrity: sha512-T41l6UHGW30jFZsL09UnJvQNmPyp7nM6TgicBgTi3PoIl3p8FetF42HltqP7RPkkKYyK/aRK+w6fhZyIpegYEw==, tarball: https://npm.pkg.github.com/download/@cpdevtools/ts-dev-utilities/1.0.1/b7dc21dfe3441c51437316089c4e6311d67adf27}
     engines: {node: '>=24'}
 
   '@eslint-community/eslint-utils@4.10.1':
@@ -164,8 +164,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@oclif/core@4.13.3':
-    resolution: {integrity: sha512-wBp2igI2KVwq2ZmpnfmGtOROo7aXZIr3OEtAS16g1wHFBqyEuswL+9K50NJWJvlpAmxd+4dVj/ycawXESU3wQQ==}
+  '@oclif/core@4.13.5':
+    resolution: {integrity: sha512-KcbWlSO+s0Yr9c5wHNC6Npqdh46iJ8t9wCWW19yipT0QmnfZjoTqqqJ1DoP6s3i5P1z5cG35AqS17KL3b20Klw==}
     engines: {node: '>=18.0.0'}
 
   '@oclif/plugin-autocomplete@3.2.56':
@@ -469,6 +469,11 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
+  ejs@6.0.1:
+    resolution: {integrity: sha512-UaaM14yby8U3k02ihS1Bmj5Kz2d7CCQM1scxpgs4Mhkq8F1wR2gl3+Ts4h5Ne4Mnt7M9m4Dw7jsuMr3+xO4vZA==}
+    engines: {node: '>=0.12.18'}
+    hasBin: true
+
   emoji-regex@10.6.0:
     resolution: {integrity: sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==}
 
@@ -659,9 +664,9 @@ packages:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
     engines: {node: '>=8'}
 
-  is-docker@2.2.1:
-    resolution: {integrity: sha512-F+i2BKsFrH66iaUFc0woD8sLy8getkwTwtOBjvs56Cx4CgJDeKQeqfz8wAYiSb8JOprWhHH5p77PbmYCvvUuXQ==}
-    engines: {node: '>=8'}
+  is-docker@3.0.0:
+    resolution: {integrity: sha512-eljcgEDlEns/7AXFosB5K/2nCM4P7FQPkGc/DWLy5rmFEWvZayGrik1d9/QIY5nJ4f9YsVvBkA6kJpHn9rISdQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
 
   is-extglob@2.1.1:
@@ -675,6 +680,11 @@ packages:
   is-glob@4.0.3:
     resolution: {integrity: sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==}
     engines: {node: '>=0.10.0'}
+
+  is-inside-container@1.0.0:
+    resolution: {integrity: sha512-KIYLCCJghfHZxqjYBE7rEy0OBuTd5xCHS7tHVgvCLkx7StIoaxwNW3hCALgEUjFfeRk+MG/Qxmp/vtETEF3tRA==}
+    engines: {node: '>=14.16'}
+    hasBin: true
 
   is-interactive@2.0.0:
     resolution: {integrity: sha512-qP1vozQRI+BMOPcjFzrjXuQvdak2pHNUMZoeG2eRbiSqyvbEf/wQtEOTOX1guk6E3t36RkaqiSt8A/6YElNxLQ==}
@@ -692,9 +702,9 @@ packages:
     resolution: {integrity: sha512-mE00Gnza5EEB3Ds0HfMyllZzbBrmLOX3vfWoj9A9PEnTfratQ/BcaJOuMhnkhjXvb2+FkY3VuHqtAGpTPmglFQ==}
     engines: {node: '>=18'}
 
-  is-wsl@2.2.0:
-    resolution: {integrity: sha512-fKzAra0rGJUUBwGBgNkHZuToZcn+TtXHpeCgmkMJMMYx1sQDYaCSyjJBSCa2nH1DGm7s3n1oBnohoVTBaN7Lww==}
-    engines: {node: '>=8'}
+  is-wsl@3.1.1:
+    resolution: {integrity: sha512-e6rvdUCiQCAuumZslxRJWR/Doq4VpPR82kqclvcS0efgt430SlGIk05vdCN58+VrzgtIcfNODjozVielycD4Sw==}
+    engines: {node: '>=16'}
 
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
@@ -862,6 +872,10 @@ packages:
   picomatch@4.0.5:
     resolution: {integrity: sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==}
     engines: {node: '>=12'}
+
+  powershell-utils@0.1.0:
+    resolution: {integrity: sha512-dM0jVuXJPsDN6DvRpea484tCUaMiXWjuCn++HGTqUWzGDjv5tZkEZldAJ/UMlqRYGFrD/etByo4/xOuC/snX2A==}
+    engines: {node: '>=20'}
 
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -1075,6 +1089,10 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
+  wsl-utils@0.4.0:
+    resolution: {integrity: sha512-9YmF+2sFEd+T7TkwlmE337F0IVzfDvDknhtpBQxxXzEOfgPphGlFYpyx0cTuCIFj8/p+sqwBYAeGxOMNSzPPDA==}
+    engines: {node: '>=20'}
+
   yaml@2.9.0:
     resolution: {integrity: sha512-2AvhNX3mb8zd6Zy7INTtSpl1F15HW6Wnqj0srWlkKLcpYl/gMIMJiyuGq2KeI2YFxUPjdlB+3Lc10seMLtL4cA==}
     engines: {node: '>= 14.6'}
@@ -1125,10 +1143,10 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.29.7': {}
 
-  '@cpdevtools/git-flow-cli@1.0.0(chokidar@3.6.0)':
+  '@cpdevtools/git-flow-cli@1.0.2(chokidar@3.6.0)':
     dependencies:
-      '@cpdevtools/git-flow': 1.0.0(chokidar@3.6.0)
-      '@oclif/core': 4.13.3
+      '@cpdevtools/git-flow': 1.0.2(chokidar@3.6.0)
+      '@oclif/core': 4.13.5
       '@oclif/plugin-autocomplete': 3.2.56
       '@oclif/plugin-help': 6.2.58
       prompts: 2.4.2
@@ -1139,11 +1157,11 @@ snapshots:
       - chokidar
       - supports-color
 
-  '@cpdevtools/git-flow@1.0.0(chokidar@3.6.0)':
+  '@cpdevtools/git-flow@1.0.2(chokidar@3.6.0)':
     dependencies:
       '@actions/core': 1.11.1
       '@actions/github': 6.0.1
-      '@cpdevtools/ts-dev-utilities': 1.0.0
+      '@cpdevtools/ts-dev-utilities': 1.0.1
       fast-glob: 3.3.3
       nunjucks: 3.2.4(chokidar@3.6.0)
       semver: 7.8.5
@@ -1152,11 +1170,11 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  '@cpdevtools/ts-dev-utilities-cli@1.0.0':
+  '@cpdevtools/ts-dev-utilities-cli@1.0.1':
     dependencies:
-      '@cpdevtools/ts-dev-utilities': 1.0.0
+      '@cpdevtools/ts-dev-utilities': 1.0.1
 
-  '@cpdevtools/ts-dev-utilities@1.0.0':
+  '@cpdevtools/ts-dev-utilities@1.0.1':
     dependencies:
       change-case: 5.4.4
       globby: 14.1.0
@@ -1239,17 +1257,16 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@oclif/core@4.13.3':
+  '@oclif/core@4.13.5':
     dependencies:
       ansi-escapes: 4.3.2
       ansis: 3.17.0
       clean-stack: 3.0.1
       cli-spinners: 2.9.2
       debug: 4.4.3(supports-color@8.1.1)
-      ejs: 3.1.10
+      ejs: 6.0.1
       get-package-type: 0.1.0
       indent-string: 4.0.0
-      is-wsl: 2.2.0
       lilconfig: 3.1.3
       minimatch: 10.2.6
       semver: 7.8.5
@@ -1259,10 +1276,11 @@ snapshots:
       widest-line: 3.1.0
       wordwrap: 1.0.0
       wrap-ansi: 7.0.0
+      wsl-utils: 0.4.0
 
   '@oclif/plugin-autocomplete@3.2.56':
     dependencies:
-      '@oclif/core': 4.13.3
+      '@oclif/core': 4.13.5
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
       ejs: 3.1.10
@@ -1271,7 +1289,7 @@ snapshots:
 
   '@oclif/plugin-help@6.2.58':
     dependencies:
-      '@oclif/core': 4.13.3
+      '@oclif/core': 4.13.5
 
   '@octokit/auth-token@4.0.0': {}
 
@@ -1584,6 +1602,8 @@ snapshots:
     dependencies:
       jake: 10.9.4
 
+  ejs@6.0.1: {}
+
   emoji-regex@10.6.0: {}
 
   emoji-regex@8.0.0: {}
@@ -1774,7 +1794,7 @@ snapshots:
     dependencies:
       binary-extensions: 2.3.0
 
-  is-docker@2.2.1: {}
+  is-docker@3.0.0: {}
 
   is-extglob@2.1.1: {}
 
@@ -1784,6 +1804,10 @@ snapshots:
     dependencies:
       is-extglob: 2.1.1
 
+  is-inside-container@1.0.0:
+    dependencies:
+      is-docker: 3.0.0
+
   is-interactive@2.0.0: {}
 
   is-number@7.0.0: {}
@@ -1792,9 +1816,9 @@ snapshots:
 
   is-unicode-supported@2.1.0: {}
 
-  is-wsl@2.2.0:
+  is-wsl@3.1.1:
     dependencies:
-      is-docker: 2.2.1
+      is-inside-container: 1.0.0
 
   isexe@2.0.0: {}
 
@@ -1953,6 +1977,8 @@ snapshots:
   picomatch@2.3.2: {}
 
   picomatch@4.0.5: {}
+
+  powershell-utils@0.1.0: {}
 
   prelude-ls@1.2.1: {}
 
@@ -2143,6 +2169,11 @@ snapshots:
       strip-ansi: 6.0.1
 
   wrappy@1.0.2: {}
+
+  wsl-utils@0.4.0:
+    dependencies:
+      is-wsl: 3.1.1
+      powershell-utils: 0.1.0
 
   yaml@2.9.0: {}
 

@@ -17,9 +17,9 @@
     "typecheck": "devutil run typecheck"
   },
   "devDependencies": {
-    "@cpdevtools/git-flow": "^1.0.0",
-    "@cpdevtools/git-flow-cli": "^1.0.0",
-    "@cpdevtools/ts-dev-utilities-cli": "^1.0.0",
+    "@cpdevtools/git-flow": "^1.0.2",
+    "@cpdevtools/git-flow-cli": "^1.0.2",
+    "@cpdevtools/ts-dev-utilities-cli": "^1.0.1",
     "@types/node": "^20.17.11",
     "@typescript-eslint/eslint-plugin": "^8.20.0",
     "@typescript-eslint/parser": "^8.20.0",
@@ -90,12 +90,18 @@
     },
     "clean": {
       "dependencies": [
-        "clean.git",
-        "pnpm.install"
+        "clean.install"
       ]
     },
     "clean.git": {
       "command": "git clean -dfX",
+      "cache": false
+    },
+    "clean.install": {
+      "command": "pnpm install",
+      "dependencies": [
+        "clean.git"
+      ],
       "cache": false
     },
     "reset": {
