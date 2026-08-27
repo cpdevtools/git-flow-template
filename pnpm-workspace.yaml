@@ -11,3 +11,4 @@ minimumReleaseAgeExclude:
   - '@cpdevtools/git-flow-cli'
   - '@cpdevtools/ts-dev-utilities'
   - '@cpdevtools/ts-dev-utilities-cli'
+  - '@oclif/core'
