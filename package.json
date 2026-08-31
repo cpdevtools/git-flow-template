@@ -11,6 +11,7 @@
     "format": "wireit",
     "gitflow": "gitflow",
     "lint": "devutil run lint",
+    "postinstall": "devutil dev-link auto",
     "prepare": "husky || true",
     "reset": "wireit",
     "test": "devutil run test",
@@ -19,7 +20,7 @@
   "devDependencies": {
     "@cpdevtools/git-flow": "^1.0.3",
     "@cpdevtools/git-flow-cli": "^1.0.3",
-    "@cpdevtools/ts-dev-utilities-cli": "^1.0.1",
+    "@cpdevtools/ts-dev-utilities-cli": "^1.1.1",
     "@types/node": "^20.17.11",
     "@typescript-eslint/eslint-plugin": "^8.20.0",
     "@typescript-eslint/parser": "^8.20.0",

@@ -1,31 +1,13 @@
-# Delete pnpm 11's install fingerprint FIRST. pnpm skips resolution entirely
-# when manifests and the pnpmfile bytes are unchanged — it cannot see that the
-# pnpmfile's behavior depends on DEV_LOCAL, and it also no-ops the .pnpm-prod
-# regeneration below after a manifest edit followed by a plain install. Both
-# lockfile steps below depend on this running before them.
-rm -f node_modules/.pnpm-workspace-state*.json
-echo "pre-commit: regenerating .pnpm-prod/pnpm-lock.yaml..."
-
-mkdir -p .pnpm-prod
-if ! pnpm_out=$(DEV_LOCAL=false pnpm install --lockfile-dir .pnpm-prod --lockfile-only 2>&1); then
-  printf '%s\n' "$pnpm_out" >&2
-  echo "" >&2
-  echo "pre-commit FAILED: could not regenerate .pnpm-prod/pnpm-lock.yaml" >&2
+# Transitional guard: with the single-lockfile model (dev-link overlay instead
+# of a DEV_LOCAL pnpmfile) nothing should ever write dev-local paths into a
+# committed file. If one shows up, a pre-conversion tool touched the repo —
+# regenerate the lockfile with a plain `pnpm install` (or fix the manifest) and
+# re-commit.
+if grep -q 'file:/devcontainer' pnpm-lock.yaml package.json projects/*/package.json 2>/dev/null; then
+  echo "pre-commit FAILED: file:/devcontainer path in lockfile or manifest (dev-local leak)" >&2
   exit 1
 fi
 
-git add .pnpm-prod/pnpm-lock.yaml
-
-# The committed root pnpm-lock.yaml must also be in published (DEV_LOCAL=false)
-# mode: CI installs from .pnpm-prod, but any nested `pnpm run` in CI checks
-# node_modules against the ROOT lockfile, and a dev-mode (file:) lockfile there
-# fails the frozen install it triggers. --lockfile-only leaves node_modules
-# alone, so local DEV_LOCAL links keep working.
-echo "pre-commit: normalizing root pnpm-lock.yaml to published mode..."
-if ! pnpm_out=$(DEV_LOCAL=false pnpm install --lockfile-only 2>&1); then
-  printf '%s\n' "$pnpm_out" >&2
-  echo "" >&2
-  echo "pre-commit FAILED: could not normalize root pnpm-lock.yaml" >&2
-  exit 1
-fi
-git add pnpm-lock.yaml
+# Repo-specific steps go below (formatting, staging) — e.g.:
+#   syncpack format
+#   git add -u
