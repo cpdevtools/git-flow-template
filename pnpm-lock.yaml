@@ -9,26 +9,26 @@ importers:
   .:
     devDependencies:
       '@cpdevtools/git-flow':
-        specifier: ^1.0.6
-        version: 1.0.6(chokidar@3.6.0)
+        specifier: ^1.0.9
+        version: 1.0.9(chokidar@3.6.0)
       '@cpdevtools/git-flow-cli':
-        specifier: ^1.0.6
-        version: 1.0.6(chokidar@3.6.0)(supports-color@8.1.1)
+        specifier: ^1.0.9
+        version: 1.0.9(chokidar@3.6.0)
       '@cpdevtools/ts-dev-utilities-cli':
-        specifier: ^1.1.3
-        version: 1.1.3
+        specifier: ^1.1.6
+        version: 1.1.6
       '@types/node':
         specifier: ^20.17.11
         version: 20.19.43
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.20.0
-        version: 8.67.0(@typescript-eslint/parser@8.67.0(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)
+        version: 8.67.0(@typescript-eslint/parser@8.67.0(eslint@9.39.5)(typescript@5.9.3))(eslint@9.39.5)(typescript@5.9.3)
       '@typescript-eslint/parser':
         specifier: ^8.20.0
-        version: 8.67.0(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)
+        version: 8.67.0(eslint@9.39.5)(typescript@5.9.3)
       eslint:
         specifier: ^9.18.0
-        version: 9.39.5(supports-color@8.1.1)
+        version: 9.39.5
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -70,26 +70,22 @@ packages:
     resolution: {integrity: sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg==}
     engines: {node: '>=6.9.0'}
 
-  '@cpdevtools/git-flow-cli@1.0.6':
-    resolution: {integrity: sha512-QAloL+WNO5ZfzCYqX7Flolv2mCRirI7GECtr/vQpqp/TqXEJgdq/IAAvX3DEsIb8ziOHuVFyfd1K4MgZLlcBEg==, tarball: https://npm.pkg.github.com/download/@cpdevtools/git-flow-cli/1.0.6/116e5459c6322a3a1c51cb2a89fdbdf8c25fca73}
+  '@cpdevtools/git-flow-cli@1.0.9':
+    resolution: {integrity: sha512-5SjJAc3GDzuU9VGjwFJM9hs56m9QpwKxCgBpUukrB84nlsJ7qrsGpbfuPq1jIbQbddGOWm44Zcfbmvull4OwEg==, tarball: https://npm.pkg.github.com/download/@cpdevtools/git-flow-cli/1.0.9/0da444e1b06173421eabeb21419ec5644852ca33}
     engines: {node: '>=24'}
     hasBin: true
 
-  '@cpdevtools/git-flow@1.0.6':
-    resolution: {integrity: sha512-g6vEb5u/0IWBKcEN0460VYHbCVpA4/lAIfC35ifNACDgoQTs/h6sahP+KH7+MFO3CVH1QEercxNCn+DWknor/g==, tarball: https://npm.pkg.github.com/download/@cpdevtools/git-flow/1.0.6/cdf409d196cf5da0c6df4eddd27a2fb9e9384ab4}
+  '@cpdevtools/git-flow@1.0.9':
+    resolution: {integrity: sha512-CncNv/tRQg/ZFIg4EcrNZBh2NFut2JiKSMCemMnBKgmdne2vq3ptXvTqJ+wmNEHHaiX0FgVV2m4fYLWPrxUtMw==, tarball: https://npm.pkg.github.com/download/@cpdevtools/git-flow/1.0.9/8946747cf193196c76d39169fbe92ee2d630cf0c}
     engines: {node: '>=24'}
 
-  '@cpdevtools/ts-dev-utilities-cli@1.1.3':
-    resolution: {integrity: sha512-8EWj95ZEIrImevhcdT+Bnv8OPjSR9e9XrhTtFEmHF0qZCw/OT3lyXRSAXFwa8mkWHXl01NXIo7phGreBu+IFhA==, tarball: https://npm.pkg.github.com/download/@cpdevtools/ts-dev-utilities-cli/1.1.3/8b8c0db33afa334104d44a5262be759fa44b4f76}
+  '@cpdevtools/ts-dev-utilities-cli@1.1.6':
+    resolution: {integrity: sha512-V8W3cGRqdJOH17RVqEu/iYXZBQkLvEH5EOVpK8hWqIQmeADvvtjnvNRAI+X0o8Gi7nctYx+1+GS9uh5NUKlq9g==, tarball: https://npm.pkg.github.com/download/@cpdevtools/ts-dev-utilities-cli/1.1.6/e55c4470e248f858e74d311daf9979181a0d6750}
     engines: {node: '>=24'}
     hasBin: true
 
-  '@cpdevtools/ts-dev-utilities@1.1.1':
-    resolution: {integrity: sha512-zewIlpgqufNzvjnsAPp7iiaOOdlznVGiG340k4IRFqgP0nNgYkc7R4fGdvVEvAQ9G2prrqA8bTPiXGo4xI0tkQ==, tarball: https://npm.pkg.github.com/download/@cpdevtools/ts-dev-utilities/1.1.1/037f3747a3b2b6621c6315d9b2f22f933304a4b5}
-    engines: {node: '>=24'}
-
-  '@cpdevtools/ts-dev-utilities@1.1.3':
-    resolution: {integrity: sha512-3WFm4z9BN20165fVysd0CrUZa4EPx2GoDTaUpHIuaeMmI5MgNXX/OQiQ8SO3BJAxetuTqklPwlTnqWOr0bWynQ==, tarball: https://npm.pkg.github.com/download/@cpdevtools/ts-dev-utilities/1.1.3/8a30a1461eb7c05982e9536ccbfa8bbae28b6cd6}
+  '@cpdevtools/ts-dev-utilities@1.1.6':
+    resolution: {integrity: sha512-WSvYQka4K67Jr0rwz374wfUqhmjMR+kYUK8N3sg3CeEhRfOm1+CsLQlZuramjj3K+5LOOS9iELhDMtnu4xZ4LQ==, tarball: https://npm.pkg.github.com/download/@cpdevtools/ts-dev-utilities/1.1.6/476e3cb34acf5e503420f45d7d1a10583b1d2bd7}
     engines: {node: '>=24'}
 
   '@eslint-community/eslint-utils@4.10.1':
@@ -1146,11 +1142,11 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.29.7': {}
 
-  '@cpdevtools/git-flow-cli@1.0.6(chokidar@3.6.0)(supports-color@8.1.1)':
+  '@cpdevtools/git-flow-cli@1.0.9(chokidar@3.6.0)':
     dependencies:
-      '@cpdevtools/git-flow': 1.0.6(chokidar@3.6.0)
+      '@cpdevtools/git-flow': 1.0.9(chokidar@3.6.0)
       '@oclif/core': 4.13.5
-      '@oclif/plugin-autocomplete': 3.2.56(supports-color@8.1.1)
+      '@oclif/plugin-autocomplete': 3.2.56
       '@oclif/plugin-help': 6.2.58
       prompts: 2.4.2
       semver: 7.8.5
@@ -1160,11 +1156,11 @@ snapshots:
       - chokidar
       - supports-color
 
-  '@cpdevtools/git-flow@1.0.6(chokidar@3.6.0)':
+  '@cpdevtools/git-flow@1.0.9(chokidar@3.6.0)':
     dependencies:
       '@actions/core': 1.11.1
       '@actions/github': 6.0.1
-      '@cpdevtools/ts-dev-utilities': 1.1.1
+      '@cpdevtools/ts-dev-utilities': 1.1.6
       fast-glob: 3.3.3
       nunjucks: 3.2.4(chokidar@3.6.0)
       semver: 7.8.5
@@ -1173,32 +1169,25 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  '@cpdevtools/ts-dev-utilities-cli@1.1.3':
+  '@cpdevtools/ts-dev-utilities-cli@1.1.6':
     dependencies:
-      '@cpdevtools/ts-dev-utilities': 1.1.3
+      '@cpdevtools/ts-dev-utilities': 1.1.6
 
-  '@cpdevtools/ts-dev-utilities@1.1.1':
+  '@cpdevtools/ts-dev-utilities@1.1.6':
     dependencies:
       change-case: 5.4.4
       globby: 14.1.0
       jsonc-parser: 3.3.1
       yaml: 2.9.0
 
-  '@cpdevtools/ts-dev-utilities@1.1.3':
+  '@eslint-community/eslint-utils@4.10.1(eslint@9.39.5)':
     dependencies:
-      change-case: 5.4.4
-      globby: 14.1.0
-      jsonc-parser: 3.3.1
-      yaml: 2.9.0
-
-  '@eslint-community/eslint-utils@4.10.1(eslint@9.39.5(supports-color@8.1.1))':
-    dependencies:
-      eslint: 9.39.5(supports-color@8.1.1)
+      eslint: 9.39.5
       eslint-visitor-keys: 3.4.3
 
   '@eslint-community/regexpp@4.12.2': {}
 
-  '@eslint/config-array@0.21.2(supports-color@8.1.1)':
+  '@eslint/config-array@0.21.2':
     dependencies:
       '@eslint/object-schema': 2.1.7
       debug: 4.4.3(supports-color@8.1.1)
@@ -1214,7 +1203,7 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
 
-  '@eslint/eslintrc@3.3.6(supports-color@8.1.1)':
+  '@eslint/eslintrc@3.3.6':
     dependencies:
       ajv: 6.15.0
       debug: 4.4.3(supports-color@8.1.1)
@@ -1288,7 +1277,7 @@ snapshots:
       wrap-ansi: 7.0.0
       wsl-utils: 0.4.0
 
-  '@oclif/plugin-autocomplete@3.2.56(supports-color@8.1.1)':
+  '@oclif/plugin-autocomplete@3.2.56':
     dependencies:
       '@oclif/core': 4.13.5
       ansis: 3.17.0
@@ -1371,15 +1360,15 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@typescript-eslint/eslint-plugin@8.67.0(@typescript-eslint/parser@8.67.0(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3))(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)':
+  '@typescript-eslint/eslint-plugin@8.67.0(@typescript-eslint/parser@8.67.0(eslint@9.39.5)(typescript@5.9.3))(eslint@9.39.5)(typescript@5.9.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.2
-      '@typescript-eslint/parser': 8.67.0(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)
+      '@typescript-eslint/parser': 8.67.0(eslint@9.39.5)(typescript@5.9.3)
       '@typescript-eslint/scope-manager': 8.67.0
-      '@typescript-eslint/type-utils': 8.67.0(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)
-      '@typescript-eslint/utils': 8.67.0(eslint@9.39.5(supports-color@8.1.1))(typescript@5.9.3)
+      '@typescript-eslint/type-utils': 8.67.0(eslint@9.39.5)(typescript@5.9.3)
+      '@typescript-eslint/utils': 8.67.0(eslint@9.39.5)(typescript@5.9.3)
       '@typescript-eslint/visitor-keys': 8.67.0
-      eslint: 9.39.5(supports-color@8.1.1)
+      eslint: 9.39.5
       ignore: 7.0.6
       natural-compare: 1.4.0
       ts-api-utils: 2.5.0(typescript@5.9.3)
@@ -1387,19 +1376,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/parser@8.67.0(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)':
+  '@typescript-eslint/parser@8.67.0(eslint@9.39.5)(typescript@5.9.3)':
     dependencies:
       '@typescript-eslint/scope-manager': 8.67.0
       '@typescript-eslint/types': 8.67.0
-      '@typescript-eslint/typescript-estree': 8.67.0(supports-color@8.1.1)(typescript@5.9.3)
+      '@typescript-eslint/typescript-estree': 8.67.0(typescript@5.9.3)
       '@typescript-eslint/visitor-keys': 8.67.0
       debug: 4.4.3(supports-color@8.1.1)
-      eslint: 9.39.5(supports-color@8.1.1)
+      eslint: 9.39.5
       typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/project-service@8.67.0(supports-color@8.1.1)(typescript@5.9.3)':
+  '@typescript-eslint/project-service@8.67.0(typescript@5.9.3)':
     dependencies:
       '@typescript-eslint/tsconfig-utils': 8.67.0(typescript@5.9.3)
       '@typescript-eslint/types': 8.67.0
@@ -1417,13 +1406,13 @@ snapshots:
     dependencies:
       typescript: 5.9.3
 
-  '@typescript-eslint/type-utils@8.67.0(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.9.3)':
+  '@typescript-eslint/type-utils@8.67.0(eslint@9.39.5)(typescript@5.9.3)':
     dependencies:
       '@typescript-eslint/types': 8.67.0
-      '@typescript-eslint/typescript-estree': 8.67.0(supports-color@8.1.1)(typescript@5.9.3)
-      '@typescript-eslint/utils': 8.67.0(eslint@9.39.5(supports-color@8.1.1))(typescript@5.9.3)
+      '@typescript-eslint/typescript-estree': 8.67.0(typescript@5.9.3)
+      '@typescript-eslint/utils': 8.67.0(eslint@9.39.5)(typescript@5.9.3)
       debug: 4.4.3(supports-color@8.1.1)
-      eslint: 9.39.5(supports-color@8.1.1)
+      eslint: 9.39.5
       ts-api-utils: 2.5.0(typescript@5.9.3)
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -1431,9 +1420,9 @@ snapshots:
 
   '@typescript-eslint/types@8.67.0': {}
 
-  '@typescript-eslint/typescript-estree@8.67.0(supports-color@8.1.1)(typescript@5.9.3)':
+  '@typescript-eslint/typescript-estree@8.67.0(typescript@5.9.3)':
     dependencies:
-      '@typescript-eslint/project-service': 8.67.0(supports-color@8.1.1)(typescript@5.9.3)
+      '@typescript-eslint/project-service': 8.67.0(typescript@5.9.3)
       '@typescript-eslint/tsconfig-utils': 8.67.0(typescript@5.9.3)
       '@typescript-eslint/types': 8.67.0
       '@typescript-eslint/visitor-keys': 8.67.0
@@ -1446,13 +1435,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/utils@8.67.0(eslint@9.39.5(supports-color@8.1.1))(typescript@5.9.3)':
+  '@typescript-eslint/utils@8.67.0(eslint@9.39.5)(typescript@5.9.3)':
     dependencies:
-      '@eslint-community/eslint-utils': 4.10.1(eslint@9.39.5(supports-color@8.1.1))
+      '@eslint-community/eslint-utils': 4.10.1(eslint@9.39.5)
       '@typescript-eslint/scope-manager': 8.67.0
       '@typescript-eslint/types': 8.67.0
-      '@typescript-eslint/typescript-estree': 8.67.0(supports-color@8.1.1)(typescript@5.9.3)
-      eslint: 9.39.5(supports-color@8.1.1)
+      '@typescript-eslint/typescript-estree': 8.67.0(typescript@5.9.3)
+      eslint: 9.39.5
       typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
@@ -1642,14 +1631,14 @@ snapshots:
 
   eslint-visitor-keys@5.0.1: {}
 
-  eslint@9.39.5(supports-color@8.1.1):
+  eslint@9.39.5:
     dependencies:
-      '@eslint-community/eslint-utils': 4.10.1(eslint@9.39.5(supports-color@8.1.1))
+      '@eslint-community/eslint-utils': 4.10.1(eslint@9.39.5)
       '@eslint-community/regexpp': 4.12.2
-      '@eslint/config-array': 0.21.2(supports-color@8.1.1)
+      '@eslint/config-array': 0.21.2
       '@eslint/config-helpers': 0.4.2
       '@eslint/core': 0.17.0
-      '@eslint/eslintrc': 3.3.6(supports-color@8.1.1)
+      '@eslint/eslintrc': 3.3.6
       '@eslint/js': 9.39.5
       '@eslint/plugin-kit': 0.4.1
       '@humanfs/node': 0.16.8
