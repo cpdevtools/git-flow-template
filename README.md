@@ -21,12 +21,12 @@ Everything workspace-level (nothing package-specific):
 | `.github/workflows/cleanup-scheduled.yml`  | Daily cleanup of old build releases, their tags, and the registry versions they published   |
 | `.github/workflows/cleanup-deleted-branch.yml` | Deletes a branch's `release/<branch>` counterpart when the branch itself is deleted (`on: delete`; only fires from the default branch's copy — see git-flow's `actions/cleanup-deleted-branch`) |
 | `.github/workflows/deploy-production.yml.example` | Example per-environment deploy workflow (rename to `deploy-{env}.yml` to enable)     |
-| `.husky/pre-commit`                        | Regenerates `.pnpm-prod/pnpm-lock.yaml` (production lockfile used by CI/publish)            |
-| `.pnpmfile.cjs`                            | `DEV_LOCAL=true pnpm install` swaps published deps for local checkouts                      |
+| `.publish/dev-local.yml.example`           | dev-link map: local checkout paths for `devutil dev-link` (rename to `dev-local.yml` to enable) |
+| `.husky/pre-commit`                        | Guards against `file:/devcontainer` paths leaking into the lockfile or manifests            |
 | `.npmrc`                                   | Scope → registry mapping + GitHub Packages auth via `GITHUB_TOKEN`                          |
 | `.syncpackrc.yml`                          | Version consistency rules (`workspace:*` for local packages, caret ranges, key sort order)  |
 | `.prettierrc` / `.prettierignore`          | Formatting config (packages format themselves via `devutil run format`)                     |
-| `.gitignore`                               | Ignores build output; commits only `.pnpm-prod/pnpm-lock.yaml`                              |
+| `.gitignore`                               | Ignores build output                                                                        |
 
 ## Getting started
 
