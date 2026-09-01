@@ -18,14 +18,15 @@ Everything workspace-level (nothing package-specific):
 | `.github/workflows/test.yml`               | Runs tests on every push (non-release branches)                                             |
 | `.github/workflows/create-release-pr.yml`  | Opens/updates a release PR on push                                                          |
 | `.github/workflows/build-pack-publish.yml` | Builds, packs, and publishes when a release PR merges                                       |
-| `.github/workflows/cleanup-scheduled.yml`  | Daily cleanup of old build artifacts                                                        |
+| `.github/workflows/cleanup-scheduled.yml`  | Daily cleanup of old build releases, their tags, and the registry versions they published   |
+| `.github/workflows/cleanup-deleted-branch.yml` | Deletes a branch's `release/<branch>` counterpart when the branch itself is deleted (`on: delete`; only fires from the default branch's copy — see git-flow's `actions/cleanup-deleted-branch`) |
 | `.github/workflows/deploy-production.yml.example` | Example per-environment deploy workflow (rename to `deploy-{env}.yml` to enable)     |
-| `.husky/pre-commit`                        | Regenerates `.pnpm-prod/pnpm-lock.yaml` (production lockfile used by CI/publish)            |
-| `.pnpmfile.cjs`                            | `DEV_LOCAL=true pnpm install` swaps published deps for local checkouts                      |
+| `.publish/dev-local.yml.example`           | dev-link map: local checkout paths for `devutil dev-link` (rename to `dev-local.yml` to enable) |
+| `.husky/pre-commit`                        | Guards against `file:/devcontainer` paths leaking into the lockfile or manifests            |
 | `.npmrc`                                   | Scope → registry mapping + GitHub Packages auth via `GITHUB_TOKEN`                          |
 | `.syncpackrc.yml`                          | Version consistency rules (`workspace:*` for local packages, caret ranges, key sort order)  |
 | `.prettierrc` / `.prettierignore`          | Formatting config (packages format themselves via `devutil run format`)                     |
-| `.gitignore`                               | Ignores build output; commits only `.pnpm-prod/pnpm-lock.yaml`                              |
+| `.gitignore`                               | Ignores build output                                                                        |
 
 ## Getting started
 
@@ -60,7 +61,24 @@ To enable deploys:
 
 - Package versions use the placeholder `0.0.0-MAIN`; git-flow substitutes the real version at release time.
 - `.publish/versions.yml` tracks the current version per release group.
-- Releases are tagged `v{version}/{packageName}` plus group tags `v{version}/MAIN` and `v{version}`.
+- Releases are tagged `{packageName}/v{version}` plus group tags `MAIN/v{version}` and `v{version}`
+  (the package/group name comes first — a plain `v{version}` tag would otherwise collide with it as
+  a git ref path, blocking both that tag and every `v*` alias).
+
+## Branch model
+
+`main` (no slash) is the **current** major — it publishes ordinary stable releases and stays that
+way indefinitely; there is no LTS branch to create at setup time. If a next-major rewrite starts
+before the current major is done, it lives on a `feature/<name>` branch: the slash makes it a
+git-flow *development line*, so it can only ever publish prereleases
+(`{nextMajor}.0.0-feature.<name>.alpha.N`), never a stable release ahead of `main`. Keep it current
+by merging `main` into it periodically (not the other way round), and re-verify with a full build
+after each merge, not just "no conflicts."
+
+Only **at graduation** — when the feature branch is ready to replace `main` — cut an LTS branch
+(`v{oldMajor}`) from `main`'s last commit, then merge the feature branch into `main` and bump
+`.publish/versions.yml` to the new major's first stable version. Don't pre-create the LTS branch or
+bump `main` ahead of that point; it was tried, caused real churn, and was reverted.
 
 ## Scripts
 
