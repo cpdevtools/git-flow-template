@@ -18,7 +18,7 @@ Everything workspace-level (nothing package-specific):
 | `.github/workflows/test.yml`               | Runs tests on every push (non-release branches)                                             |
 | `.github/workflows/create-release-pr.yml`  | Opens/updates a release PR on push                                                          |
 | `.github/workflows/build-pack-publish.yml` | Builds, packs, and publishes when a release PR merges                                       |
-| `.github/workflows/cleanup-scheduled.yml`  | Daily cleanup of old build releases, their tags, and the registry versions they published   |
+| `.github/workflows/cleanup-scheduled.yml`  | Daily cleanup of `.build.*` releases, stale drafts, their tags, and the registry versions they published — 90 days by default (git-flow's fallback; the file's `days_old` only affects manual runs) |
 | `.github/workflows/cleanup-deleted-branch.yml` | Deletes a branch's `release/<branch>` counterpart when the branch itself is deleted (`on: delete`; only fires from the default branch's copy — see git-flow's `actions/cleanup-deleted-branch`) |
 | `.github/workflows/deploy-production.yml.example` | Example per-environment deploy workflow (rename to `deploy-{env}.yml` to enable)     |
 | `.publish/dev-local.yml.example`           | dev-link map: local checkout paths for `devutil dev-link` (rename to `dev-local.yml` to enable) |
