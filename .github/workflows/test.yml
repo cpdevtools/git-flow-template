@@ -6,6 +6,7 @@ on:
       - 'release/**'
 
 permissions:
+  contents: read # Required by actions/checkout — an explicit block zeroes every unlisted scope
   checks: write # Write step summaries / check runs
   actions: read # Read workflow context
   packages: read # Install from GitHub Package Registry
