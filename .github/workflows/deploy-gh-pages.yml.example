@@ -1,0 +1,87 @@
+name: Deploy — Development (GitHub Pages)
+
+# Per-environment deploy workflow for a `static-site` artifact deployed with the
+# `gh-pages` method. Discovered by `gitflow deploy` via convention: deploy-{env}.yml.
+#
+# Unlike deploy-production.yml.example there is no deploy gateway: the bundle is
+# fetched and run inside this job, and the job's GITHUB_TOKEN pushes the site to
+# the gh-pages branch. The repository's Pages source must be that branch.
+#
+# Layout on gh-pages (see the Deployment wiki page):
+#   production      /<slot>/            e.g. /org-portal/  or /org-portal/v2/
+#   other envs      /env/<env>/<slot>/  e.g. /env/dev/org-portal/
+#
+# Required environment configuration (Settings → Environments → Development):
+#   vars.DEPLOY_ENV              — KEY=VAL lines, e.g. GH_PAGES_DEST=env/dev
+#                                   Production leaves GH_PAGES_DEST unset.
+#                                   Add PAGES_ROOT= (empty) for a custom domain.
+#   vars.DEPLOY_TYPE_DEFAULT     — optional: gh-pages
+#   vars.DEPLOY_ALLOWED_METHODS  — optional: gh-pages
+#
+# Copy this file per environment (e.g. deploy-production.yml) and change the
+# workflow name and the `environment:` value.
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_id:
+        description: 'GitHub Release ID (numeric) or tag (e.g. v1.2.3/@my-scope/my-pkg)'
+        required: true
+        type: string
+      deploy_type:
+        description: 'Deploy method. Leave blank for gh-pages.'
+        required: false
+        type: string
+        default: ''
+      deploy_env:
+        description: 'Per-run deploy env overrides as KEY=VAL lines (highest priority).'
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: write # push to the gh-pages branch
+  deployments: write
+  packages: read # @cpdevtools/git-flow-deploy-cli from GitHub Packages
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: 'Development'
+    env:
+      DEPLOY_TYPE_DEFAULT: ${{ vars.DEPLOY_TYPE_DEFAULT || 'gh-pages' }}
+    steps:
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 11
+
+      - name: Resolve release id
+        id: release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE: ${{ inputs.release_id }}
+        run: |
+          case "$RELEASE" in
+            ''|*[!0-9]*) id="$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/$RELEASE" --jq .id)" ;;
+            *) id="$RELEASE" ;;
+          esac
+          echo "id=$id" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOY_TYPE: ${{ inputs.deploy_type || env.DEPLOY_TYPE_DEFAULT }}
+          RELEASE_ID: ${{ steps.release.outputs.id }}
+          # Environment lines first, per-run overrides last (highest priority).
+          DEPLOY_ENV_LINES: |
+            ${{ vars.DEPLOY_ENV }}
+            ${{ inputs.deploy_env }}
+        run: |
+          while IFS= read -r line; do
+            case "$line" in ''|'#'*) ;; *=*) export "$line" ;; esac
+          done <<< "$DEPLOY_ENV_LINES"
+          pnpm config set "//npm.pkg.github.com/:_authToken" "$GITHUB_TOKEN"
+          pnpm config set @cpdevtools:registry https://npm.pkg.github.com
+          pnpm dlx @cpdevtools/git-flow-deploy-cli deploy "$GITHUB_REPOSITORY" "$RELEASE_ID" \
+            --bundle "deploy-${DEPLOY_TYPE}.zip"
