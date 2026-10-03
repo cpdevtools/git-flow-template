@@ -1,0 +1,62 @@
+name: Withdraw
+
+# Registry side of `gitflow withdraw`. The CLI marks the release on GitHub
+# (hidden from `gitflow deploy`, refused by the deploy side) and then
+# dispatches this workflow to do what needs registry credentials:
+#   - repoint floating tags (latest / next / channel) to the next eligible
+#     version, or back to the release on --undo
+#   - mark (npm deprecate) or delete (GitHub Packages) the package versions
+#   - delete release assets when asked
+#
+# Registry tokens are the same ones publish-release uses: each registry in
+# .publish/registries.yml names its `auth` environment variable. GitHub
+# registries work with GITHUB_TOKEN; add others as secrets below.
+#
+# Copy to .github/workflows/withdraw.yml. Nothing else is needed.
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_ids:
+        description: 'Comma-separated release ids (set by gitflow withdraw)'
+        required: true
+        type: string
+      registry:
+        description: 'mark | delete | none'
+        required: false
+        type: string
+        default: 'none'
+      assets:
+        description: 'keep | delete'
+        required: false
+        type: string
+        default: 'keep'
+      undo:
+        description: 'true to restore'
+        required: false
+        type: string
+        default: 'false'
+
+permissions:
+  contents: write # edit the release, delete assets
+  packages: write # delete GitHub Packages versions, retag images
+
+jobs:
+  withdraw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Apply withdrawal
+        uses: cpdevtools/git-flow/actions/withdraw@main
+        with:
+          release_ids: ${{ inputs.release_ids }}
+          registry: ${{ inputs.registry }}
+          assets: ${{ inputs.assets }}
+          undo: ${{ inputs.undo }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          # Named by `auth:` in .publish/registries.yml. GitHub registries use GITHUB_TOKEN.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
